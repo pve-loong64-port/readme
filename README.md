@@ -305,3 +305,23 @@ vma-to-pbs
 ```
 
 </details>
+
+## Notes
+### Note on Ceph distribution
+Proxmox VE distibutes its Ceph packages into sepearate repositories named as
+`ceph-<codename>` (e.g. <http://download.proxmox.com/debian/ceph-tentacle/>
+for Ceph 20, and <http://download.proxmox.com/debian/ceph-squid/> for Ceph 19).
+
+Proxmox VE also distributes a set of Ceph packages of minimum supported Ceph
+version in its main repository.
+
+A Proxmox VE release may support multiple Ceph releases, see
+`PVE/Ceph/Releases.pm` in the `pve-manager` Git repository for the version
+support matrix. Therefore, a single version Ceph repository may contain multiple
+repositories corresponding to multiple Debian releases, which in turn
+correspond to different Proxmox VE releases.
+
+You would need to build Ceph packages in the corresponding branch for different
+Ceph release and Proxmox VE release combination. `master` branch is always the
+latest Ceph release for the latest Proxmox VE release. Other combinations are in
+the corresponding `ceph-<codename>-<pverelease>` branches.
