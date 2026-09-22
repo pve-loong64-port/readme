@@ -325,3 +325,7 @@ You would need to build Ceph packages in the corresponding branch for different
 Ceph release and Proxmox VE release combination. `master` branch is always the
 latest Ceph release for the latest Proxmox VE release. Other combinations are in
 the corresponding `ceph-<codename>-<pverelease>` branches.
+
+## Notes on `pmg-log-tracker`
+
+You need to set your timezone to `Europe/Vienna` to pass the tests...
