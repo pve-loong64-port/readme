@@ -11,11 +11,11 @@ you already have a working Proxmox VE Loong64 installation, you can skip the
    bootstrapping Proxmox VE.
 2. Install following build tools on your system:
    ```bash
-   apt install sbuild mmdebstrap uidmap piuparts devscripts debcargo build-essentials sudo
+   apt install sbuild mmdebstrap uidmap piuparts devscripts debcargo build-essential sudo
    ```
-3. Create a unpriveleged user dedicated for building packages:
+3. Create an unprivileged user dedicated for building packages:
    ```bash
-   useradd -aG wheel build
+   useradd -m -s /bin/bash -G sudo build
    ```
    Then switch to the user or login to the user:
    ```bash
@@ -308,7 +308,7 @@ vma-to-pbs
 
 ## Notes
 ### Note on Ceph distribution
-Proxmox VE distibutes its Ceph packages into sepearate repositories named as
+Proxmox VE distributes its Ceph packages into separate repositories named as
 `ceph-<codename>` (e.g. <http://download.proxmox.com/debian/ceph-tentacle/>
 for Ceph 20, and <http://download.proxmox.com/debian/ceph-squid/> for Ceph 19).
 
